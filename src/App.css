@@ -1,38 +1,107 @@
+body{
+  background: #131B25;
+}
 .App {
-  text-align: center;
+  color: #f6f6f6;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-list_box{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.user-list_head{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.user-list_head h1{
+  min-width: 200px;
+}
+.head-btn{
+  display: flex;
+}
+.head-btn button{
+  margin: 0 10px;
+}
+.user{
+  max-width: 260px;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 4.766px;
+  background: #212937;
+  position: relative;
+  overflow: hidden;
+  margin: 0 15px 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.user img{
+  width: 100%;
+  transition: 0.4s all;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user .user-name{
+  position: absolute;
+  text-align: center;
+  font-size: 18px;
+  padding: 15px;
+  background: rgba(33, 41, 55, 0.60);
+  backdrop-filter: blur(2.5px);
+  width: calc(100% - 30px);
+  top: 206px;
+  left: 0;
+  right: 0;
+}
+.user .user-btn{
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+a{
+  text-decoration: none;
+}
+button{
+  display: block;
+  height: 100%;
+  background-color: #37475F;
+  min-width: 75px;
+  outline: none;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  color: #C0C3C9;
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: 700;
+  padding: 10px 15px;
+  transition: 0.5s all;
+}
+.go-back{
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  background: rgba(33, 41, 55, 0.60);
+  backdrop-filter: blur(2.5px);
+}
+button:hover{
+  color: #fff;
+  transform: scale(1.1);
+}
+input{
+  width: 300px;
+  padding: 12px;
+  background-color: #37475F;
+  border: none;
+  border-radius: 100px;
+  color: #C0C3C9;
+  outline: none;
+  font-size: 14px;
+}
+input::placeholder{
+  color: #C0C3C9;
+  font-size: 12px;
 }
