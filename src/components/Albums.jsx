@@ -14,7 +14,7 @@ const Albums = ({ albums, userId, onPostsButtonClick }) => {
         <Link to={`/posts?userId=${userId}`}>
           <button onClick={() => onPostsButtonClick(userId)}>Posts</button>
         </Link>
-        <Link to="/">
+        <Link to="/User-list">
           <button>Home</button>
         </Link>
         <button className='go-back' onClick={() => window.history.back()}>

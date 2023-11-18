@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import User from './components/User';
 import Posts from './components/Posts';
@@ -62,11 +62,11 @@ function App() {
   };
 
   const filteredAndSortedUsers = users
-  .filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
-  .sort((a, b) => {
-    const order = sortOrder === 'asc' ? 1 : -1;
-    return order * a.name.localeCompare(b.name);
-  });
+    .filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      const order = sortOrder === 'asc' ? 1 : -1;
+      return order * a.name.localeCompare(b.name);
+    });
 
   return (
     <div className='App'>
@@ -76,7 +76,7 @@ function App() {
       <div className='container'>
         <Routes>
           <Route
-            path='/'
+            path='/User-list'
             element={
               <div className='user-list'>
                 <div className='user-list_head'>
@@ -92,16 +92,15 @@ function App() {
                     <button onClick={() => setSortOrder('desc')}>Desc</button>
                   </div>
                 </div>
-                
                 <div className='user-list_box'>
-                {filteredAndSortedUsers.map(user => (
-                  <User
-                    key={user.id}
-                    user={user}
-                    onPostsButtonClick={handlePostsButtonClick}
-                    onAlbumsButtonClick={handleAlbumsButtonClick}
-                  />
-                ))}
+                  {filteredAndSortedUsers.map(user => (
+                    <User
+                      key={user.id}
+                      user={user}
+                      onPostsButtonClick={handlePostsButtonClick}
+                      onAlbumsButtonClick={handleAlbumsButtonClick}
+                    />
+                  ))}
                 </div>
               </div>
             }
